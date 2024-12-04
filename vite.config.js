@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: "/timotius_hadi_kurniawan-vitevue",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
