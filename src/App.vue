@@ -77,12 +77,18 @@ import HelloWorld from "./components/HelloWorld.vue";
     >
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img
-            class="h-8 w-auto"
-            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-            alt=""
-          />
+          <span class="sr-only">Timotius Hadi Kurniawan</span>
+          <h1
+            style="
+              color: black;
+              font-weight: bold;
+              font-size: 30px;
+              font-family: Arial, Helvetica, sans-serif;
+              letter-spacing: 3px;
+            "
+          >
+            Portofolio
+          </h1>
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -258,7 +264,7 @@ import HelloWorld from "./components/HelloWorld.vue";
     </Dialog>
   </header>
   <body>
-    <div class="flex-1" style="padding: 7rem">
+    <div class="flex-1" style="padding: 10rem">
       <div class="flex justify-between items-center">
         <div>
           <h1 class="text-4xl font-bold">TIMOTIUS HADI KURNIAWAN</h1>
@@ -285,7 +291,7 @@ import HelloWorld from "./components/HelloWorld.vue";
             alt="Profile picture of Alvalen Shafel"
             class="rounded-full"
             height="200"
-            src="https://storage.googleapis.com/a1aa/image/PdUAPyKgtr6DBt0cAuxtdbPwq979Jv79WjC8xXWU1E1wUx9E.jpg"
+            src="@/assets/Tim.jpeg"
             width="200"
           />
         </div>
