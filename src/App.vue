@@ -70,10 +70,16 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header class="bg-white" style="position: fixed; width: 100%">
+  <header class="bg-white">
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8"
       aria-label="Global"
+      style="
+        position: fixed;
+        width: 100%;
+        top: 0;
+        padding: 2rem 0rem 0rem 10rem;
+      "
     >
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
@@ -91,180 +97,111 @@ import HelloWorld from "./components/HelloWorld.vue";
           </h1>
         </a>
       </div>
-      <div class="flex lg:hidden">
-        <button
-          type="button"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          @click="mobileMenuOpen = true"
+    </nav>
+    <nav
+      class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      aria-label="Global"
+      style="
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        justify-content: center;
+      "
+    >
+      <div class="lg:flex lg:gap-x-12" style="margin: 0px 20px 0px 20px">
+        <a
+          href="#"
+          class="text-sm/6 font-semibold text-gray-900 transition duration-300 delay-150 hover:delay-300"
         >
-          <span class="sr-only">Open main menu</span>
-          <Bars3Icon class="size-6" aria-hidden="true" />
-        </button>
+          <svg
+            class="h-10 w-10 text-gray-500"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transition: 500ms ease"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <polyline points="5 12 3 12 12 3 21 12 19 12" />
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+          </svg>
+        </a>
       </div>
-      <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-        <Popover class="relative">
-          <PopoverButton
-            class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900"
+      <div class="lg:flex lg:gap-x-12" style="margin: 0px 20px 0px 20px">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">
+          <svg
+            class="h-10 w-10 text-gray-500"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transition: 500ms ease"
           >
-            Product
-            <ChevronDownIcon
-              class="size-5 flex-none text-gray-400"
-              aria-hidden="true"
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+      </div>
+      <div class="lg:flex lg:gap-x-12" style="margin: 0px 20px 0px 20px">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">
+          <svg
+            class="h-10 w-10 text-gray-500"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transition: 500ms ease"
+          >
+            <path
+              d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
             />
-          </PopoverButton>
-
-          <transition
-            enter-active-class="transition ease-out duration-200"
-            enter-from-class="opacity-0 translate-y-1"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-active-class="transition ease-in duration-150"
-            leave-from-class="opacity-100 translate-y-0"
-            leave-to-class="opacity-0 translate-y-1"
+          </svg>
+        </a>
+      </div>
+      <div class="lg:flex lg:gap-x-12" style="margin: 0px 20px 0px 20px">
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">
+          <svg
+            class="h-10 w-10 text-gray-500"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transition: 500ms ease"
           >
-            <PopoverPanel
-              class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
-            >
-              <div class="p-4">
-                <div
-                  v-for="item in products"
-                  :key="item.name"
-                  class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
-                >
-                  <div
-                    class="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-                  >
-                    <component
-                      :is="item.icon"
-                      class="size-6 text-gray-600 group-hover:text-indigo-600"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div class="flex-auto">
-                    <a
-                      :href="item.href"
-                      class="block font-semibold text-gray-900"
-                    >
-                      {{ item.name }}
-                      <span class="absolute inset-0" />
-                    </a>
-                    <p class="mt-1 text-gray-600">{{ item.description }}</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"
-              >
-                <a
-                  v-for="item in callsToAction"
-                  :key="item.name"
-                  :href="item.href"
-                  class="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
-                >
-                  <component
-                    :is="item.icon"
-                    class="size-5 flex-none text-gray-400"
-                    aria-hidden="true"
-                  />
-                  {{ item.name }}
-                </a>
-              </div>
-            </PopoverPanel>
-          </transition>
-        </Popover>
-
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900"
-          >Marketplace</a
-        >
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
-      </PopoverGroup>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm/6 font-semibold text-gray-900"
-          >Log in <span aria-hidden="true">&rarr;</span></a
-        >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <div
+            style="
+              background-color: gray;
+              width: 100%;
+              height: 4px;
+              margin-bottom: -10px;
+              transition: 500ms ease;
+            "
+          >
+            &nbsp
+          </div>
+        </a>
       </div>
     </nav>
-    <Dialog
-      class="lg:hidden"
-      @close="mobileMenuOpen = false"
-      :open="mobileMenuOpen"
-    >
-      <div class="fixed inset-0 z-10" />
-      <DialogPanel
-        class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-      >
-        <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
-          <button
-            type="button"
-            class="-m-2.5 rounded-md p-2.5 text-gray-700"
-            @click="mobileMenuOpen = false"
-          >
-            <span class="sr-only">Close menu</span>
-            <XMarkIcon class="size-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <Disclosure as="div" class="-mx-3" v-slot="{ open }">
-                <DisclosureButton
-                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Product
-                  <ChevronDownIcon
-                    :class="[open ? 'rotate-180' : '', 'size-5 flex-none']"
-                    aria-hidden="true"
-                  />
-                </DisclosureButton>
-                <DisclosurePanel class="mt-2 space-y-2">
-                  <DisclosureButton
-                    v-for="item in [...products, ...callsToAction]"
-                    :key="item.name"
-                    as="a"
-                    :href="item.href"
-                    class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >{{ item.name }}</DisclosureButton
-                  >
-                </DisclosurePanel>
-              </Disclosure>
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >Features</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >Marketplace</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >Company</a
-              >
-            </div>
-            <div class="py-6">
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >Log in</a
-              >
-            </div>
-          </div>
-        </div>
-      </DialogPanel>
-    </Dialog>
   </header>
   <body>
-    <div class="flex-1" style="padding: 10rem">
+    <div class="flex-1" style="margin: auto; width: 70%; padding: 10px">
       <div class="flex justify-between items-center">
         <div>
           <h1 class="text-4xl font-bold">TIMOTIUS HADI KURNIAWAN</h1>
