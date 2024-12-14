@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -22,10 +26,17 @@ a,
   a:hover {
     /* background-color: hsla(160, 100%, 37%, 0.2); */
   }
-  a:hover .text-gray-500 {
+  a:hover .menublat {
     --tw-text-opacity: 1;
-    scale: 1.2;
-    color: #000000;
+    scale: 1.1;
+  }
+
+  a::before:hover .menublat {
+    content: attr(name);
+    align-content: center;
+    width: 60px;
+    color: gray;
+    margin-right: 5px;
   }
 }
 
