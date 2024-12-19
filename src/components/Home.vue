@@ -137,10 +137,10 @@
         </div>
         <div class="hidden md:block">
           <img
-            alt="Profile picture of Alvalen Shafel"
+            alt="Profile Timotius Hadi Kurniawan"
             class="rounded-full"
             height="200"
-            src="@/assets/Tim.jpeg"
+            src="@/assets/timonobacground.png"
             width="200"
           />
         </div>
@@ -154,7 +154,7 @@
       <div class="flex justify-between items-center">
         <div>
           <div>
-            <h2 class="text-6xl font-bold mt-4">About Me</h2>
+            <h2 class="subhead text-6xl font-bold mt-4">About Me</h2>
             <div
               style="
                 margin-top: 15px;
@@ -173,7 +173,7 @@
               "
             ></div>
           </div>
-          <p class="text-gray-600 mt-4 max-w-lg">
+          <p class="subisi text-gray-600 mt-4 max-w-lg">
             Ini Tentang saya, dan ketertarikan saya
           </p>
           <div class="mt-8 space-x-4">
@@ -186,11 +186,18 @@
         </div>
         <div class="hidden md:block">
           <img
-            alt="Profile picture of Alvalen Shafel"
+            alt="Profile Timotius Hadi Kurniawan"
             class="rounded-full"
             height="200"
             src="@/assets/Tim.jpeg"
-            width="200"
+            style="
+              position: fixed;
+              border-radius: 0;
+              top: 7em;
+              width: 20em;
+              left: 77%;
+              height: 30em;
+            "
           />
         </div>
       </div>
@@ -203,7 +210,7 @@
       <div class="flex justify-between items-center">
         <div>
           <div>
-            <h2 class="text-6xl font-bold mt-4">My Project</h2>
+            <h2 class="subhead text-6xl font-bold mt-4">My Project</h2>
             <div
               style="
                 margin-top: 15px;
@@ -222,7 +229,7 @@
               "
             ></div>
           </div>
-          <p class="text-gray-600 mt-4 max-w-lg">
+          <p class="subisi text-gray-600 mt-4 max-w-lg">
             Beberapa Pengalaman project yang sudah saya kerjakan dan beberapa
             project dengan beberapa bahasa pemrograman yang saya pelajari
           </p>
@@ -236,7 +243,7 @@
         </div>
         <div class="hidden md:block">
           <img
-            alt="Profile picture of Alvalen Shafel"
+            alt="Profile Timotius Hadi Kurniawan"
             class="rounded-full"
             height="200"
             src="@/assets/Tim.jpeg"
@@ -253,7 +260,7 @@
       <div class="flex justify-between items-center">
         <div>
           <div>
-            <h2 class="text-6xl font-bold mt-4">Contact me</h2>
+            <h2 class="subhead text-6xl font-bold mt-4">Contact me</h2>
             <div
               style="
                 margin-top: 15px;
@@ -272,53 +279,58 @@
               "
             ></div>
           </div>
-          <p class="text-gray-600 mt-4 max-w-lg">
+          <p class="subisi text-gray-600 mt-4 max-w-lg">
             My Contact Person lebih detail bisa download CV <br /><br />
             timotius089@gmail.com
           </p>
           <div class="mt-8 space-x-4">
             <button
-              style="
-                background-color: #000000;
-                background-color: #000000;
-                padding: 3%;
-                width: 50px;
-              "
-              class="border border-gray-800 text-gray-800 px-6 py-2 rounded-full"
+              id="email"
+              class="btncontact border-gray-800 text-gray-800 px-6 py-2 rounded-full"
+              cef="timotius089@gmail.com"
             >
+              <!-- @click="" -->
               <img style="width: 100%" src="@/assets/mail.png" alt="" />
             </button>
             <button
-              style="
-                background-color: #000000;
-                background-color: #000000;
-                padding: 3%;
-                width: 50px;
-              "
-              class="border border-gray-800 text-gray-800 px-6 py-2 rounded-full"
+              class="btncontact border border-gray-800 text-gray-800 px-6 py-2 rounded-full"
+              cef="www.linkedin.com/in/timotius-hadi-kurniawan-616a29288"
             >
               <img style="width: 100%" src="@/assets/linkedin.png" alt="" />
             </button>
             <button
-              style="
-                background-color: #000000;
-                background-color: #000000;
-                padding: 3%;
-                width: 50px;
-              "
-              class="border border-gray-800 text-gray-800 px-6 py-2 rounded-full"
+              class="btncontact btncontactactve border border-gray-800 text-gray-800 px-6 py-2 rounded-full"
+              cef="WA 089697069835"
             >
               <img style="width: 100%" src="@/assets/whatsapp.png" alt="" />
             </button>
           </div>
         </div>
         <div class="hidden md:block">
+          <div
+            style="
+              position: fixed;
+              border-radius: 0;
+              top: 7em;
+              width: 20em;
+              left: 77%;
+              height: 30em;
+              z-index: 1;
+              background-color: #00000040;
+            "
+          ></div>
           <img
-            alt="Profile picture of Alvalen Shafel"
+            alt="Profile Timotius Hadi Kurniawan"
             class="rounded-full"
-            height="200"
-            src="@/assets/Tim.jpeg"
-            width="200"
+            src="@/assets/work.jpg"
+            style="
+              position: fixed;
+              border-radius: 0;
+              top: 7em;
+              width: 20em;
+              left: 77%;
+              height: 30em;
+            "
           />
         </div>
       </div>
@@ -391,9 +403,43 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
   };
 });
+// function con() {
+//   // let classtom = document.getElementsByClassName("btncontact");
+//   // console.log(classtom);
+//   console.log("tom");
+// }
 </script>
 
 <style scoped>
+.btncontact {
+  background-color: #000000;
+  padding: 3%;
+  width: 50px;
+  border: 0px;
+}
+.btncontact:hover {
+  background-color: #686868;
+}
+.btncontactactve {
+  background-color: #686868;
+}
+.btncontactactve::after {
+  content: attr(cef);
+  text-align: right;
+  bottom: 24%;
+  left: 30%;
+  right: 25%;
+  font-weight: 600;
+  text-decoration: underline;
+  position: absolute;
+  letter-spacing: 1.5px;
+}
+.subhead {
+  font-size: 7em;
+}
+.subisi {
+  font-size: 20px;
+}
 .menublat {
   --tw-text-opacity: 1;
   color: rgb(255 255 255);
